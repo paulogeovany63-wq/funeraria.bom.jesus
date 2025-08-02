@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Funerária e Assistencial Bom Jesus: mais de 26 anos oferecendo acolhimento, respeito e serviços funerários humanizados em Minas Gerais." />
+  <meta name="keywords" content="funerária, plano funerário, assistência funeral, velório, sepultamento, traslado, Bom Jesus do Galho, Pingo D'Água" />
+  <title>Funerária e Assistencial Bom Jesus</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    /* Paleta suave e acolhedora */
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e6f0fa;
+      scroll-behavior: smooth;
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      background: linear-gradient(to right, #5a8dee, #92b6ff);
+      padding: 40px 20px;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+      font-family: 'Merriweather', serif;
+      letter-spacing: 1.2px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: #4972c1;
+      display: flex;
+      justify-content: center;
+      padding: 12px 0;
+      z-index: 1000;
+      font-weight: 700;
+      font-family: 'Open Sans', sans-serif;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+    nav a {
+      color: white;
+      margin: 0 25px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 17px;
+    }
+    nav a:hover, nav a:focus {
+      text-decoration: underline;
+      color: #cce0ff;
+      outline: none;
+    }
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: 20px auto;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 0 18px rgba(0,0,0,0.1);
+      color: #222;
+    }
+    /* Seção SOBRE ajustada para layout flex */
+    #sobre {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: flex-start;
+      background: none; /* fundo retirado para a seção, fundo aplicado em div texto */
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: 20px auto;
+      box-shadow: none;
+      border-radius: 0;
+    }
+    #sobre > div:first-child {
+      flex: 1 1 450px;
+      background-color: rgba(245, 249, 255, 0.9);
+      border-radius: 12px;
+      padding: 24px;
+      box-sizing: border-box;
+      color: #222;
+      box-shadow: 0 0 20px rgba(0,0,0,0.07);
+    }
+    #sobre > div:last-child {
+      flex: 1 1 450px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    #sobre iframe {
+      flex-grow: 1;
+      min-height: 250px;
+      border-radius: 12px;
+      box-shadow: 0 0 18px rgba(0,0,0,0.1);
+      border: none;
+    }
+    h2 {
+      border-left: 6px solid #4972c1;
+      padding-left: 14px;
+      color: #2e3d75;
+      font-family: 'Merriweather', serif;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      color: #333;
+      font-size: 17px;
+    }
+    ul li::before {
+      content: "✔ ";
+      margin-right: 8px;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 16px;
+      margin: 12px 0;
+      border: 1px solid #bbb;
+      border-radius: 8px;
+      font-size: 16px;
+      font-family: 'Open Sans', sans-serif;
+      color: #222;
+      transition: border-color 0.3s ease;
+    }
+    form input:focus, form textarea:focus {
+      border-color: #4972c1;
+      outline: none;
+      box-shadow: 0 0 6px #8aa6ff;
+    }
+    form input::placeholder, form textarea::placeholder {
+      color: #888;
+    }
+    form button {
+      background-color: #4972c1;
+      color: white;
+      padding: 16px 32px;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+    form button:hover, form button:focus {
+      background-color: #3452a5;
+      outline: none;
+    }
+    .social a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #2e3d75;
+      font-weight: 700;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+    .social a:hover, .social a:focus {
+      color: #4a7dfd;
+      outline: none;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 12px;
+      margin-top: 12px;
+    }
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      text-decoration: none;
+      z-index: 999;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
+    }
+    .whatsapp-btn:hover, .whatsapp-btn:focus {
+      background-color: #1ebe57;
+      outline: none;
+    }
+    footer {
+      background-color: #4972c1;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 40px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: 'Open Sans', sans-serif;
+    }
+    footer a {
+      color: #cce0ff;
+      text-decoration: underline;
+    }
+    footer a:hover, footer a:focus {
+      color: #e0e9ff;
+      outline: none;
+    }
+
+    /* Responsividade */
+    @media (max-width: 900px) {
+      #sobre {
+        flex-direction: column;
+      }
+      #sobre > div {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>FUNERÁRIA E ASSISTENCIAL BOM JESUS</h1>
+  </header>
+
+  <nav>
+    <a href="#sobre">SOBRE</a>
+    <a href="#servicos">SERVIÇOS</a>
+    <a href="#plano">PLANO ASSISTENCIAL</a>
+    <a href="#contato">CONTATO</a>
+  </nav>
+
+  <section id="sobre">
+    <div>
+      <h2>Sobre Nós</h2>
+      <p>Com mais de 26 anos de história, a Funerária e Assistencial Bom Jesus é referência em acolhimento, respeito e excelência no atendimento funerário na região.</p>
+      <p>Nossa missão é oferecer tranquilidade, dignidade e amparo às famílias nos momentos mais sensíveis, com ética e compromisso social. Contamos com uma equipe especializada, estrutura moderna e atendimento humanizado, respeitando as crenças e valores de cada cliente.</p>
+      <p>Contamos com duas bases para melhor atender você e sua família:</p>
+      <ul>
+        <li><strong>Bom Jesus do Galho:</strong> Rua Vital Martins Bueno, 776 - Centro</li>
+        <li><strong>Pingo D'Água:</strong> Rua Minas Gerais, 40 - Bairro São Sebastião</li>
+      </ul>
+    </div>
+    <div>
+      <iframe src="https://www.google.com/maps?q=Rua+Vital+Martins+Bueno+776,+Bom+Jesus+do+Galho,+MG&output=embed" title="Mapa da base Bom Jesus do Galho" loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps?q=Rua+Minas+Gerais+40,+Pingo+D'Água,+MG&output=embed" title="Mapa da base Pingo D'Água" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <section id="servicos">
+    <h2>Serviços Oferecidos</h2>
+    <ul>
+      <li>Atendimento 24 horas com equipe pronta para acolher</li>
+      <li>Traslado local e regional com veículos próprios</li>
+      <li>Velório com estrutura confortável e reservada</li>
+      <li>Sepultamento com todo apoio necessário</li>
+      <li>Plano funerário com atendimento humanizado</li>
+    </ul>
+  </section>
+
+  <section id="plano">
+    <h2>Plano Assistencial</h2>
+    <p>Nosso Plano Assistencial foi criado para garantir tranquilidade à sua família em momentos difíceis, com atendimento completo e humanizado.</p>
+    <ul>
+      <li>Adesão simples e rápida</li>
+      <li>Cobertura para titular e dependentes</li>
+      <li>Parcelas mensais acessíveis</li>
+      <li>Inclusão de serviços funerários completos</li>
+      <li>Descontos em clínicas, farmácias e serviços parceiros</li>
+    </ul>
+    <p>Entre em contato conosco e conheça todos os benefícios do plano para proteger quem você ama.</p>
+  </section>
+
+  <section id="contato">
+    <h2>Entre em Contato</h2>
+    <form action="https://wa.me/5533999299597" method="get" target="_blank" aria-label="Formulário de contato">
+      <input type="text" name="nome" placeholder="Seu nome" required aria-required="true" />
+      <input type="email" name="email" placeholder="Seu e-mail" required aria-required="true" />
+      <input type="tel" name="telefone" placeholder="Seu telefone (opcional)" />
+      <textarea name="mensagem" rows="5" placeholder="Escreva sua mensagem..." required aria-required="true"></textarea>
+      <button type="submit">Falar pelo WhatsApp</button>
+    </form>
+    <p style="margin-top: 20px; text-align: center;">
+      <a href="https://forms.gle/jdqbaHwxFDUgZWSm9" target="_blank" rel="noopener noreferrer" style="color: #4972c1; font-weight: bold; text-decoration: underline;">Clique aqui para responder nossa Pesquisa de Satisfação</a>
+    </p>
+  </section>
+
+  <!-- Nova seção de Feedback com estrelas -->
+  <section id="feedback" style="max-width: 1000px; margin: 40px auto; background-color: rgba(255, 255, 255, 0.95); border-radius: 12px; box-shadow: 0 0 18px rgba(0,0,0,0.1); padding: 30px;">
+    <h2>Deixe seu Feedback</h2>
+    <form id="feedbackForm">
+      <label for="starRating" style="font-weight: 700; margin-bottom: 8px; display: block;">Avaliação:</label>
+      <div id="starRating" style="font-size: 30px; color: #ccc; user-select: none; cursor: pointer;">
+        <span data-value="1">☆</span>
+        <span data-value="2">☆</span>
+        <span data-value="3">☆</span>
+        <span data-value="4">☆</span>
+        <span data-value="5">☆</span>
+      </div>
+      <textarea name="feedback" rows="5" placeholder="Escreva seu feedback aqui..." required style="width: 100%; padding: 16px; font-size: 16px; border-radius: 8px; border: 1px solid #bbb; resize: vertical; margin-top: 15px;"></textarea>
+      <button type="submit" style="margin-top: 12px; background-color: #4972c1; color: white; padding: 16px 32px; border: none; border-radius: 8px; font-size: 18px; cursor: pointer; font-weight: 700; box-shadow: 0 3px 6px rgba(0,0,0,0.1);">Enviar Feedback</button>
+    </form>
+    <p id="feedbackMsg" style="margin-top: 15px; font-weight: 600; color: #2e3d75;"></p>
+
+    <div id="feedbackList" style="margin-top: 30px; max-height: 300px; overflow-y: auto; border-top: 1px solid #ccc; padding-top: 20px;">
+      <h3>Feedbacks Recebidos:</h3>
+      <ul id="feedbackItems" style="list-style: none; padding-left: 0; color: #333; font-size: 16px;"></ul>
+    </div>
+  </section>
+
+  <section class="social" style="max-width: 1000px; margin: 0 auto 50px;">
+    <h2>Siga nas Redes</h2>
+    <p>
+      <a href="https://www.instagram.com/funerariabom_jesus?utm_source=ig_web_button_share_sheet&igsh=MW9uZXQzZDRzbXg0MA==" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.facebook.com/share/14aVUs3iSN/" target="_blank" rel="noopener noreferrer">Facebook</a>
+    </p>
+  </section>
+
+  <a class="whatsapp-btn" href="https://wa.me/5533999299597" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp">💬</a>
+
+  <footer>
+    <p>
+      &copy; 2025 Funerária e Assistencial Bom Jesus. Todos os direitos reservados. | 
+      <a href="#politica" onclick="document.getElementById('politica').style.display='block';">Política de Privacidade</a>
+    </p>
+  </footer>
+
+  <!-- Modal simples para Política de Privacidade -->
+  <div id="politica" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); color:#222; overflow:auto; padding:30px; box-sizing:border-box; z-index: 9999;">
+    <div style="max-width:700px; margin:40px auto; background:#fff; border-radius:10px; padding:20px; position:relative;">
+      <h2>Política de Privacidade</h2>
+      <p>A Funerária e Assistencial Bom Jesus respeita a sua privacidade e protege seus dados pessoais. As informações coletadas neste site são usadas exclusivamente para responder às suas solicitações e melhorar nossos serviços.</p>
+      <p>Não compartilhamos seus dados com terceiros sem sua autorização. Você pode solicitar a qualquer momento a exclusão dos seus dados.</p>
+      <button onclick="document.getElementById('politica').style.display='none';" style="position:absolute; top:10px; right:10px; padding:5px 10px; font-weight:700; cursor:pointer;">Fechar</button>
+    </div>
+  </div>
+
+  <script>
+    const feedbackForm = document.getElementById('feedbackForm');
+    const feedbackMsg = document.getElementById('feedbackMsg');
+    const feedbackItems = document.getElementById('feedbackItems');
+    const stars = document.querySelectorAll('#starRating span');
+    let selectedRating = 0;
+
+    function updateStars(rating) {
+      stars.forEach(star => {
+        star.textContent = (parseInt(star.dataset.value) <= rating) ? '★' : '☆';
+        star.style.color = (parseInt(star.dataset.value) <= rating) ? '#f5b301' : '#ccc';
+      });
+    }
+
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        selectedRating = parseInt(star.dataset.value);
+        updateStars(selectedRating);
+      });
+      star.addEventListener('mouseover', () => {
+        updateStars(parseInt(star.dataset.value));
+      });
+      star.addEventListener('mouseout', () => {
+        updateStars(selectedRating);
+      });
+    });
+
+    function loadFeedbacks() {
+      const<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Funerária e Assistencial Bom Jesus: mais de 26 anos oferecendo acolhimento, respeito e serviços funerários humanizados em Minas Gerais." />
+  <meta name="keywords" content="funerária, plano funerário, assistência funeral, velório, sepultamento, traslado, Bom Jesus do Galho, Pingo D'Água" />
+  <title>Funerária e Assistencial Bom Jesus</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    /* Paleta suave e acolhedora */
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e6f0fa;
+      scroll-behavior: smooth;
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      background: linear-gradient(to right, #5a8dee, #92b6ff);
+      padding: 40px 20px;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+      font-family: 'Merriweather', serif;
+      letter-spacing: 1.2px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: #4972c1;
+      display: flex;
+      justify-content: center;
+      padding: 12px 0;
+      z-index: 1000;
+      font-weight: 700;
+      font-family: 'Open Sans', sans-serif;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+    nav a {
+      color: white;
+      margin: 0 25px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 17px;
+    }
+    nav a:hover, nav a:focus {
+      text-decoration: underline;
+      color: #cce0ff;
+      outline: none;
+    }
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: 20px auto;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 0 18px rgba(0,0,0,0.1);
+      color: #222;
+    }
+    /* Seção SOBRE ajustada para layout flex */
+    #sobre {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: flex-start;
+      background: none; /* fundo retirado para a seção, fundo aplicado em div texto */
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: 20px auto;
+      box-shadow: none;
+      border-radius: 0;
+    }
+    #sobre > div:first-child {
+      flex: 1 1 450px;
+      background-color: rgba(245, 249, 255, 0.9);
+      border-radius: 12px;
+      padding: 24px;
+      box-sizing: border-box;
+      color: #222;
+      box-shadow: 0 0 20px rgba(0,0,0,0.07);
+    }
+    #sobre > div:last-child {
+      flex: 1 1 450px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    #sobre iframe {
+      flex-grow: 1;
+      min-height: 250px;
+      border-radius: 12px;
+      box-shadow: 0 0 18px rgba(0,0,0,0.1);
+      border: none;
+    }
+    h2 {
+      border-left: 6px solid #4972c1;
+      padding-left: 14px;
+      color: #2e3d75;
+      font-family: 'Merriweather', serif;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      color: #333;
+      font-size: 17px;
+    }
+    ul li::before {
+      content: "✔ ";
+      margin-right: 8px;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 16px;
+      margin: 12px 0;
+      border: 1px solid #bbb;
+      border-radius: 8px;
+      font-size: 16px;
+      font-family: 'Open Sans', sans-serif;
+      color: #222;
+      transition: border-color 0.3s ease;
+    }
+    form input:focus, form textarea:focus {
+      border-color: #4972c1;
+      outline: none;
+      box-shadow: 0 0 6px #8aa6ff;
+    }
+    form input::placeholder, form textarea::placeholder {
+      color: #888;
+    }
+    form button {
+      background-color: #4972c1;
+      color: white;
+      padding: 16px 32px;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+    form button:hover, form button:focus {
+      background-color: #3452a5;
+      outline: none;
+    }
+    .social a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #2e3d75;
+      font-weight: 700;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+    .social a:hover, .social a:focus {
+      color: #4a7dfd;
+      outline: none;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 12px;
+      margin-top: 12px;
+    }
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      text-decoration: none;
+      z-index: 999;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
+    }
+    .whatsapp-btn:hover, .whatsapp-btn:focus {
+      background-color: #1ebe57;
+      outline: none;
+    }
+    footer {
+      background-color: #4972c1;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 40px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: 'Open Sans', sans-serif;
+    }
+    footer a {
+      color: #cce0ff;
+      text-decoration: underline;
+    }
+    footer a:hover, footer a:focus {
+      color: #e0e9ff;
+      outline: none;
+    }
+
+    /* Responsividade */
+    @media (max-width: 900px) {
+      #sobre {
+        flex-direction: column;
+      }
+      #sobre > div {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>FUNERÁRIA E ASSISTENCIAL BOM JESUS</h1>
+  </header>
+
+  <nav>
+    <a href="#sobre">SOBRE</a>
+    <a href="#servicos">SERVIÇOS</a>
+    <a href="#plano">PLANO ASSISTENCIAL</a>
+    <a href="#contato">CONTATO</a>
+  </nav>
+
+  <section id="sobre">
+    <div>
+      <h2>Sobre Nós</h2>
+      <p>Com mais de 26 anos de história, a Funerária e Assistencial Bom Jesus é referência em acolhimento, respeito e excelência no atendimento funerário na região.</p>
+      <p>Nossa missão é oferecer tranquilidade, dignidade e amparo às famílias nos momentos mais sensíveis, com ética e compromisso social. Contamos com uma equipe especializada, estrutura moderna e atendimento humanizado, respeitando as crenças e valores de cada cliente.</p>
+      <p>Contamos com duas bases para melhor atender você e sua família:</p>
+      <ul>
+        <li><strong>Bom Jesus do Galho:</strong> Rua Vital Martins Bueno, 776 - Centro</li>
+        <li><strong>Pingo D'Água:</strong> Rua Minas Gerais, 40 - Bairro São Sebastião</li>
+      </ul>
+    </div>
+    <div>
+      <iframe src="https://www.google.com/maps?q=Rua+Vital+Martins+Bueno+776,+Bom+Jesus+do+Galho,+MG&output=embed" title="Mapa da base Bom Jesus do Galho" loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps?q=Rua+Minas+Gerais+40,+Pingo+D'Água,+MG&output=embed" title="Mapa da base Pingo D'Água" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <section id="servicos">
+    <h2>Serviços Oferecidos</h2>
+    <ul>
+      <li>Atendimento 24 horas com equipe pronta para acolher</li>
+      <li>Traslado local e regional com veículos próprios</li>
+      <li>Velório com estrutura confortável e reservada</li>
+      <li>Sepultamento com todo apoio necessário</li>
+      <li>Plano funerário com atendimento humanizado</li>
+    </ul>
+  </section>
+
+  <section id="plano">
+    <h2>Plano Assistencial</h2>
+    <p>Nosso Plano Assistencial foi criado para garantir tranquilidade à sua família em momentos difíceis, com atendimento completo e humanizado.</p>
+    <ul>
+      <li>Adesão simples e rápida</li>
+      <li>Cobertura para titular e dependentes</li>
+      <li>Parcelas mensais acessíveis</li>
+      <li>Inclusão de serviços funerários completos</li>
+      <li>Descontos em clínicas, farmácias e serviços parceiros</li>
+    </ul>
+    <p>Entre em contato conosco e conheça todos os benefícios do plano para proteger quem você ama.</p>
+  </section>
+
+  <section id="contato">
+    <h2>Entre em Contato</h2>
+    <form action="https://wa.me/5533999299597" method="get" target="_blank" aria-label="Formulário de contato">
+      <input type="text" name="nome" placeholder="Seu nome" required aria-required="true" />
+      <input type="email" name="email" placeholder="Seu e-mail" required aria-required="true" />
+      <input type="tel" name="telefone" placeholder="Seu telefone (opcional)" />
+      <textarea name="mensagem" rows="5" placeholder="Escreva sua mensagem..." required aria-required="true"></textarea>
+      <button type="submit">Falar pelo WhatsApp</button>
+    </form>
+    <p style="margin-top: 20px; text-align: center;">
+      <a href="https://forms.gle/jdqbaHwxFDUgZWSm9" target="_blank" rel="noopener noreferrer" style="color: #4972c1; font-weight: bold; text-decoration: underline;">Clique aqui para responder nossa Pesquisa de Satisfação</a>
+    </p>
+  </section>
+
+  <!-- Nova seção de Feedback com estrelas -->
+  <section id="feedback" style="max-width: 1000px; margin: 40px auto; background-color: rgba(255, 255, 255, 0.95); border-radius: 12px; box-shadow: 0 0 18px rgba(0,0,0,0.1); padding: 30px;">
+    <h2>Deixe seu Feedback</h2>
+    <form id="feedbackForm">
+      <label for="starRating" style="font-weight: 700; margin-bottom: 8px; display: block;">Avaliação:</label>
+      <div id="starRating" style="font-size: 30px; color: #ccc; user-select: none; cursor: pointer;">
+        <span data-value="1">☆</span>
+        <span data-value="2">☆</span>
+        <span data-value="3">☆</span>
+        <span data-value="4">☆</span>
+        <span data-value="5">☆</span>
+      </div>
+      <textarea name="feedback" rows="5" placeholder="Escreva seu feedback aqui..." required style="width: 100%; padding: 16px; font-size: 16px; border-radius: 8px; border: 1px solid #bbb; resize: vertical; margin-top: 15px;"></textarea>
+      <button type="submit" style="margin-top: 12px; background-color: #4972c1; color: white; padding: 16px 32px; border: none; border-radius: 8px; font-size: 18px; cursor: pointer; font-weight: 700; box-shadow: 0 3px 6px rgba(0,0,0,0.1);">Enviar Feedback</button>
+    </form>
+    <p id="feedbackMsg" style="margin-top: 15px; font-weight: 600; color: #2e3d75;"></p>
+
+    <div id="feedbackList" style="margin-top: 30px; max-height: 300px; overflow-y: auto; border-top: 1px solid #ccc; padding-top: 20px;">
+      <h3>Feedbacks Recebidos:</h3>
+      <ul id="feedbackItems" style="list-style: none; padding-left: 0; color: #333; font-size: 16px;"></ul>
+    </div>
+  </section>
+
+  <section class="social" style="max-width: 1000px; margin: 0 auto 50px;">
+    <h2>Siga nas Redes</h2>
+    <p>
+      <a href="https://www.instagram.com/funerariabom_jesus?utm_source=ig_web_button_share_sheet&igsh=MW9uZXQzZDRzbXg0MA==" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.facebook.com/share/14aVUs3iSN/" target="_blank" rel="noopener noreferrer">Facebook</a>
+    </p>
+  </section>
+
+  <a class="whatsapp-btn" href="https://wa.me/5533999299597" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp">💬</a>
+
+  <footer>
+    <p>
+      &copy; 2025 Funerária e Assistencial Bom Jesus. Todos os direitos reservados. | 
+      <a href="#politica" onclick="document.getElementById('politica').style.display='block';">Política de Privacidade</a>
+    </p>
+  </footer>
+
+  <!-- Modal simples para Política de Privacidade -->
+  <div id="politica" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); color:#222; overflow:auto; padding:30px; box-sizing:border-box; z-index: 9999;">
+    <div style="max-width:700px; margin:40px auto; background:#fff; border-radius:10px; padding:20px; position:relative;">
+      <h2>Política de Privacidade</h2>
+      <p>A Funerária e Assistencial Bom Jesus respeita a sua privacidade e protege seus dados pessoais. As informações coletadas neste site são usadas exclusivamente para responder às suas solicitações e melhorar nossos serviços.</p>
+      <p>Não compartilhamos seus dados com terceiros sem sua autorização. Você pode solicitar a qualquer momento a exclusão dos seus dados.</p>
+      <button onclick="document.getElementById('politica').style.display='none';" style="position:absolute; top:10px; right:10px; padding:5px 10px; font-weight:700; cursor:pointer;">Fechar</button>
+    </div>
+  </div>
+
+  <script>
+    const feedbackForm = document.getElementById('feedbackForm');
+    const feedbackMsg = document.getElementById('feedbackMsg');
+    const feedbackItems = document.getElementById('feedbackItems');
+    const stars = document.querySelectorAll('#starRating span');
+    let selectedRating = 0;
+
+    function updateStars(rating) {
+      stars.forEach(star => {
+        star.textContent = (parseInt(star.dataset.value) <= rating) ? '★' : '☆';
+        star.style.color = (parseInt(star.dataset.value) <= rating) ? '#f5b301' : '#ccc';
+      });
+    }
+
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        selectedRating = parseInt(star.dataset.value);
+        updateStars(selectedRating);
+      });
+      star.addEventListener('mouseover', () => {
+        updateStars(parseInt(star.dataset.value));
+      });
+      star.addEventListener('mouseout', () => {
+        updateStars(selectedRating);
+      });
+    });
+
+    function loadFeedbacks() {
+      const
